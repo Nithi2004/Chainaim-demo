@@ -1,8 +1,9 @@
+// src/app/components/DomainRegistry.tsx
 import { Box, Button, Text, Input, Icon, Divider, Grid, FormControl, FormLabel, GridItem } from '@chakra-ui/react';
 import { useState } from 'react';
 import { CheckIcon } from '@chakra-ui/icons';
 
-const DomainRegistryProver = () => {
+const DomainRegistry = () => {
   const [files, setFiles] = useState<{ [key: string]: { name: string; uploaded: boolean } }>({
     document1: { name: '', uploaded: false },
     document2: { name: '', uploaded: false },
@@ -24,7 +25,7 @@ const DomainRegistryProver = () => {
 
   const handleGenerateProofs = () => {
     if (files.document1.uploaded && files.document2.uploaded) {
-      alert('Domain registry proofs generated!');
+      alert('Domain registry documents uploaded successfully!');
     } else {
       alert('Please upload all required documents.');
     }
@@ -32,7 +33,7 @@ const DomainRegistryProver = () => {
 
   return (
     <Box p={6}>
-      <Text fontSize="2xl" fontWeight="bold" mb={4}>Domain Registry Prover</Text>
+      <Text fontSize="2xl" fontWeight="bold" mb={4}>Domain Registry</Text>
       <Grid templateColumns="repeat(2, 1fr)" gap={8} mb={8}>
         <GridItem>
           <FormControl mb={4}>
@@ -78,15 +79,14 @@ const DomainRegistryProver = () => {
       </Grid>
 
       <Button colorScheme="teal" size="lg" onClick={handleGenerateProofs}>
-        Generate Domain Registry Proofs
+        Submit Domain Registry Documents
       </Button>
 
       <Divider borderColor="black" my={8} />
-
       <Text fontSize="xl" fontWeight="bold">Additional Information</Text>
       {/* Add any other specific sections for this page */}
     </Box>
   );
 };
 
-export default DomainRegistryProver;
+export default DomainRegistry;
