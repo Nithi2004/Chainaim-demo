@@ -1,9 +1,12 @@
 "use client"; // Mark this file as a client component
 
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, IconButton, useColorMode } from '@chakra-ui/react';
+import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 
 const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box>
       <Flex
@@ -13,7 +16,7 @@ const Navbar = () => {
         py={{ base: 4 }}
         px={{ base: 6 }}
         align="center"
-        justify="center" // Center the title
+        justify="space-between" // Space between title and the theme toggle button
       >
         {/* Left Side: Page Title */}
         <Flex align="center">
@@ -21,6 +24,17 @@ const Navbar = () => {
             <Title label="CHAINAIM" />
           </Link>
         </Flex>
+
+        {/* Right Side: Theme Toggle Button */}
+        <IconButton
+          aria-label="Toggle theme"
+          icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+          onClick={toggleColorMode}
+          variant="ghost"
+          color="white"
+          fontSize="20px"
+          _hover={{ bg: "teal.500", color: "white" }}
+        />
       </Flex>
     </Box>
   );
