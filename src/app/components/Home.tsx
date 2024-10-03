@@ -8,7 +8,6 @@ const Home = () => {
       <SimpleGrid columns={2} spacing={8} mt={8}>
         <Link href="/deep-composition-prover" passHref>
           <Box
-            as="a" // Ensures the Box behaves like a link
             width="80%"
             bgGradient="linear(to-r, orange.300, orange.400)"
             height="200px"
@@ -17,7 +16,7 @@ const Home = () => {
             justifyContent="center"
             borderRadius="md"
             mx="auto"
-            cursor="pointer" // Add cursor pointer to indicate it's clickable
+            cursor="pointer"
           >
             <Text color="white" fontSize="lg">ZKPET Deep Composition Prover</Text>    
           </Box>
@@ -25,7 +24,6 @@ const Home = () => {
 
         <Link href="/domain-registry" passHref>
           <Box
-            as="a"
             width="80%"
             bgGradient="linear(to-r, orange.300, orange.400)"
             height="200px"
@@ -42,7 +40,6 @@ const Home = () => {
 
         <Link href="/business-process-prover" passHref>
           <Box
-            as="a"
             width="80%"
             bgGradient="linear(to-r, orange.300, orange.400)"
             height="200px"
@@ -59,7 +56,6 @@ const Home = () => {
 
         <Link href="/risk-model-prover" passHref>
           <Box
-            as="a"
             width="80%"
             bgGradient="linear(to-r, orange.300, orange.400)"
             height="200px"
